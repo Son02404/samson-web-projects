@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Samson Andoh — Information Technology student, web developer and technology enthusiast.">
+  <meta name="theme-color" content="#101b2d">
+  <title>Samson Andoh | Developer Portfolio</title>
+
+  <!-- W3.CSS Framework -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0b1424;
+      --navy2: #13243b;
+      --blue: #3678f6;
+      --cyan: #55d6e8;
+      --ink: #182338;
+      --muted: #65748b;
+      --paper: #f4f7fb;
+      --line: #e4ebf4;
+    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", Arial, sans-serif; }
+    h1,h2,h3,h4,.brand { font-family: "Space Grotesk", sans-serif; }
+    a { text-decoration: none; }
+    .topbar { background: rgba(11,20,36,.97); color: white; position: sticky; top: 0; z-index: 20; box-shadow: 0 4px 18px #08101d25; }
+    .topbar a { color: white; }
+    .brand { font-weight: 700; letter-spacing: .5px; }
+    .topbar .w3-button:hover { background: #263a56 !important; }
+    .hero {
+      color: white; min-height: 520px; display: flex; align-items: center;
+      background:
+        radial-gradient(circle at 78% 28%, rgba(85,214,232,.22), transparent 27%),
+        radial-gradient(circle at 90% 80%, rgba(54,120,246,.22), transparent 32%),
+        linear-gradient(125deg, #0b1424 0%, #142b49 58%, #14506a 100%);
+      overflow: hidden; position: relative;
+    }
+    .hero:after {
+      content: "</>"; position: absolute; right: 8%; bottom: 8%;
+      font: 700 clamp(100px, 18vw, 220px) "Space Grotesk", sans-serif;
+      color: rgba(255,255,255,.045); pointer-events: none;
+    }
+    .hero-inner { max-width: 1140px; width: 100%; margin: auto; padding: 78px 25px; position: relative; z-index: 1; }
+    .eyebrow,.kicker { color: var(--cyan); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 12px; }
+    .hero h1 { font-size: clamp(43px, 7vw, 76px); line-height: 1.04; margin: 17px 0; max-width: 800px; }
+    .hero p { color: #d3e1f1; font-size: 18px; line-height: 1.8; max-width: 670px; }
+    .btn-main { background: var(--blue) !important; color: white !important; border-radius: 8px; padding: 12px 22px; font-weight: 700; }
+    .btn-outline { border: 1px solid #a7c7e8; color: white !important; border-radius: 8px; padding: 11px 22px; }
+    .section { max-width: 1140px; margin: auto; padding: 72px 24px; }
+    .kicker { color: var(--blue); letter-spacing: 1.8px; }
+    .heading { color: var(--navy); font-size: 36px; margin: 9px 0 13px; }
+    .intro,.muted { color: var(--muted); line-height: 1.8; }
+    .intro { max-width: 730px; }
+    .panel { background: white; border: 1px solid var(--line); border-radius: 15px; padding: 25px; height: 100%; box-shadow: 0 9px 28px rgba(16,35,60,.05); }
+    .iconbox { width: 47px; height: 47px; border-radius: 12px; display: grid; place-items: center; color: var(--blue); background: #eaf1ff; font-weight: 700; font-size: 19px; }
+    .skill { display: inline-block; background: #eaf1ff; color: #2452a0; border: 1px solid #dce8ff; padding: 8px 13px; border-radius: 30px; margin: 5px 5px 0 0; font-size: 13px; font-weight: 600; }
+    .project-card { overflow: hidden; padding: 0; transition: transform .2s ease, box-shadow .2s ease; }
+    .project-card:hover { transform: translateY(-5px); box-shadow: 0 16px 35px rgba(16,35,60,.12); }
+    .project-cover { min-height: 165px; padding: 25px; color: white; display: flex; flex-direction: column; justify-content: space-between; }
+    .cover-blue { background: linear-gradient(130deg,#173b83,#2878c7); }
+    .cover-teal { background: linear-gradient(130deg,#123e50,#0e9a9a); }
+    .cover-purple { background: linear-gradient(130deg,#3d287c,#7754c8); }
+    .cover-dark { background: linear-gradient(130deg,#202e45,#3d5b7c); }
+    .project-type { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #dcecff; font-weight: 700; }
+    .project-symbol { font: 700 42px "Space Grotesk",sans-serif; opacity: .9; align-self: flex-end; }
+    .project-body { padding: 23px; }
+    .status { display: inline-block; padding: 5px 9px; border-radius: 30px; background: #e7f8ef; color: #187344; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .7px; }
+    .status-dev { background: #fff4dc; color: #9a6200; }
+    .project-body h3 { margin-top: 12px; }
+    .project-body p { min-height: 92px; }
+    .project-link { display: inline-block; margin-top: 8px; }
+    .contact-band { background: linear-gradient(120deg,#101d32,#173e60); color: white; border-radius: 17px; padding: 38px; }
+    .contact-band p { color: #cbd8e8; line-height: 1.8; }
+    footer { background: #080f1c; color: #bdc9d9; text-align: center; padding: 27px 15px; }
+    footer strong { color: white; }
+    @media (max-width: 600px) {
+      .hero { min-height: 465px; }
+      .hero-inner { padding: 60px 21px; }
+      .section { padding: 54px 18px; }
+      .heading { font-size: 30px; }
+      .project-body p { min-height: 0; }
+      .contact-band { padding: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main navigation -->
+  <div class="w3-bar topbar w3-padding-small">
+    <a href="#home" class="w3-bar-item w3-button brand w3-large">SAMSON<span style="color:#55d6e8">.</span></a>
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#skills" class="w3-bar-item w3-button">Skills</a>
+      <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+    <button class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleMenu()" aria-label="Toggle navigation">☰</button>
+  </div>
+  <div id="mobileMenu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium" style="background:#17283f">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleMenu()">About</a>
+    <a href="#skills" class="w3-bar-item w3-button" onclick="toggleMenu()">Skills</a>
+    <a href="#projects" class="w3-bar-item w3-button" onclick="toggleMenu()">Projects</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- Hero section -->
+  <header id="home" class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Information Technology • Web Development</div>
+      <h1>Hi, I'm Samson Andoh.<br><span style="color:#55d6e8">I turn ideas into digital solutions.</span></h1>
+      <p>
+        I am an Information Technology student and aspiring developer with an
+        interest in building useful websites, software systems and practical
+        technology solutions. Explore my skills and live project demos below.
+      </p>
+      <a href="#projects" class="w3-button btn-main w3-margin-right w3-margin-top">Explore My Projects ↗</a>
+      <a href="#about" class="w3-button btn-outline w3-margin-top">More About Me</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="w3-row-padding">
+      <div class="w3-col l7 m7">
+        <div class="kicker">A little about me</div>
+        <h2 class="heading">Curious mind. Practical builder. Lifelong learner.</h2>
+        <p class="muted">
+          My name is Samson Andoh. I am developing my knowledge and practical
+          experience in Information Technology, with a strong interest in web
+          development, programming, databases, networking and computer support.
+        </p>
+        <p class="muted">
+          I enjoy learning by building projects. Each project gives me an
+          opportunity to practise problem-solving, improve my technical skills
+          and understand how technology can address everyday challenges.
+        </p>
+      </div>
+      <div class="w3-col l5 m5 w3-padding">
+        <div class="panel">
+          <div class="iconbox">SA</div>
+          <h3>My direction</h3>
+          <p class="muted">To grow into a capable IT professional by creating reliable, accessible and user-friendly digital products.</p>
+          <hr style="border-color:#e4ebf4">
+          <p><strong>Field:</strong> Information Technology</p>
+          <p><strong>Interests:</strong> Web development, software and IT support</p>
+          <p><strong>Workflow:</strong> Learn · Build · Test · Improve</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" style="background:#eaf0f7">
+    <div class="section">
+      <div class="kicker">My toolkit</div>
+      <h2 class="heading">Skills & areas of interest</h2>
+      <p class="intro">Technologies and IT areas I have worked with or am actively learning. I update this section as my experience grows.</p>
+      <div class="w3-row-padding w3-margin-top">
+        <div class="w3-third w3-margin-bottom">
+          <div class="panel">
+            <div class="iconbox">&lt;/&gt;</div>
+            <h3>Web Development</h3>
+            <p class="muted">Building website layouts and interfaces using HTML, CSS, JavaScript and responsive CSS frameworks.</p>
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <div class="panel">
+            <div class="iconbox">DB</div>
+            <h3>Software & Databases</h3>
+            <p class="muted">Practising programming logic, data structures, backend development and relational database concepts.</p>
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <div class="panel">
+            <div class="iconbox">IT</div>
+            <h3>IT Support & Networking</h3>
+            <p class="muted">Exploring computer troubleshooting, hardware and software support, and networking fundamentals.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-margin-top">
+        <span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span>
+        <span class="skill">W3.CSS</span><span class="skill">React</span><span class="skill">Node.js</span>
+        <span class="skill">Express.js</span><span class="skill">PostgreSQL</span><span class="skill">Networking</span>
+        <span class="skill">Computer Troubleshooting</span><span class="skill">Data Structures</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live projects and demos -->
+  <section id="projects" class="section">
+    <div class="kicker">Builds & experiments</div>
+    <h2 class="heading">My projects & live demos</h2>
+    <p class="intro">Explore some of my practical web development projects. Each live demo opens in a new tab.</p>
+
+    <div class="w3-row-padding w3-margin-top">
+
+      <div class="w3-half w3-margin-bottom">
+        <article class="panel project-card">
+          <div class="project-cover cover-blue">
+            <span class="project-type">Live project · Queue management</span>
+            <span class="project-symbol">01</span>
+          </div>
+          <div class="project-body">
+            <span class="status">Live demo</span>
+            <h3>Bank Queue Management System</h3>
+            <p class="muted">A web application that demonstrates how a queue system can organise customers waiting for service in a banking environment.</p>
+            <a class="w3-button btn-main project-link" href="https://bank-queue-management-system.netlify.app/" target="_blank" rel="noopener noreferrer">Open Live Demo ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="w3-half w3-margin-bottom">
+        <article class="panel project-card">
+          <div class="project-cover cover-teal">
+            <span class="project-type">Live project · Text editor</span>
+            <span class="project-symbol">02</span>
+          </div>
+          <div class="project-body">
+            <span class="status">Live demo</span>
+            <h3>Stack-Based Text Editor</h3>
+            <p class="muted">A practical demonstration of the stack data structure, showing how last-in, first-out behaviour can support text editing and undo-style actions.</p>
+            <a class="w3-button btn-main project-link" href="https://stack-based-text-editor.netlify.app/" target="_blank" rel="noopener noreferrer">Open Live Demo ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="w3-half w3-margin-bottom">
+        <article class="panel project-card">
+          <div class="project-cover cover-purple">
+            <span class="project-type">Live project · Patient services</span>
+            <span class="project-symbol">03</span>
+          </div>
+          <div class="project-body">
+            <span class="status">Live demo</span>
+            <h3>Hospital Patient Queue System</h3>
+            <p class="muted">A queue-management project designed to demonstrate how patients can be organised in an orderly service process at a healthcare facility.</p>
+            <a class="w3-button btn-main project-link" href="https://hospital-patient-queue-system.netlify.app/" target="_blank" rel="noopener noreferrer">Open Live Demo ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="w3-half w3-margin-bottom">
+        <article class="panel project-card">
+          <div class="project-cover cover-dark">
+            <span class="project-type">In development · Unlock services</span>
+            <span class="project-symbol">04</span>
+          </div>
+          <div class="project-body">
+            <span class="status status-dev">In development</span>
+            <h3>SonUnlockPro</h3>
+            <p class="muted">A developing web-based service project. The planned technology stack includes a React interface, Node.js/Express backend and PostgreSQL database.</p>
+            <span class="w3-text-grey w3-small">Private development build — no public demo link yet.</span>
+          </div>
+        </article>
+      </div>
+
+    </div>
+    <p class="w3-small w3-text-grey w3-margin-top">Project links are included as previously shared. Availability and features may change as projects are updated.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="background:#eaf0f7">
+    <div class="section">
+      <div class="contact-band">
+        <div class="eyebrow">Get in touch</div>
+        <h2 class="heading" style="color:white">Have an idea or a project?</h2>
+        <p>I'm interested in connecting with people who enjoy technology, learning and building useful solutions.</p>
+        <!-- Replace the placeholder with your real email address -->
+        <a href="mailto:your-email@example.com" class="w3-button w3-white w3-round-large">Email Samson ↗</a>
+        <p class="w3-small" style="margin-bottom:0">The email button currently uses a placeholder. Update it with your own email before publishing.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Samson Andoh</strong> · Information Technology Portfolio</p>
+    <p class="w3-small">Designed with W3.CSS · © <span id="year"></span> Samson Andoh</p>
+    <a href="#home" class="w3-text-light-blue w3-small">Back to top ↑</a>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      if (menu.className.indexOf("w3-show") === -1) {
+        menu.className += " w3-show";
+      } else {
+        menu.className = menu.className.replace(" w3-show", "");
+      }
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
